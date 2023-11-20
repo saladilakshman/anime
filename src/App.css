@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+}
+span {
+  color: burlywood;
+}
+
+.stack::-webkit-scrollbar {
+  width: 0;
+}
+#title-name{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  overflow:hidden;
+}
