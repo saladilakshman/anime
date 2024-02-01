@@ -103,6 +103,7 @@ export default function App() {
     }
   };
   useEffect(() => {
+    const fetching=()=>{
     const urls = [
       "https://api.jikan.moe/v4/recommendations/anime",
       "https://api.jikan.moe/v4/reviews/anime",
@@ -111,7 +112,7 @@ export default function App() {
       "https://api.jikan.moe/v4/top/anime",
       "https://api.jikan.moe/v4/schedules"
     ];
-    Promise.all(
+    axios.all(
       urls.map((url) => {
         return axios.get(url);
       })
@@ -125,7 +126,9 @@ export default function App() {
         dispatch({ type: "carousel", payload: results[5]?.data?.data });
       })
       .catch((err) => console.log(err));
-  }, []);
+    }
+    fetching()
+  }, [])
   const [state, dispatch] = useReducer(reducerfunction, initialState);
   const MenuItems = [
     { type: "Recommended", link: "recommended" },
