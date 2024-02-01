@@ -126,8 +126,8 @@ export default function App() {
         dispatch({ type: "carousel", payload: results[5]?.data?.data });
       })
       .catch((err) => console.log(err));
-    }
-    fetching()
+    } 
+   fetching()
   }, [])
   const [state, dispatch] = useReducer(reducerfunction, initialState);
   const MenuItems = [
